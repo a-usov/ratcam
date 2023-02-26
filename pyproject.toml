@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ratcam"
+authors = [
+    { name = "Artem Usov", email = "artem.o.u@gmail.com" },
+]
+description = "Stream your animal from a Raspberry Pi to Youtube."
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "MIT License" }
+dynamic = ["version"]
+dependencies = [
+    "ffmpeg-python",
+]
+
+[project.scripts]
+ratcam = "ratcam.cli:main"
+
+[project.optional-dependencies]
+dev = ["build"]
